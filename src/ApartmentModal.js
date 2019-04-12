@@ -16,10 +16,10 @@ export default class ApartmentModal extends Component {
     visible: this.props.isOpen
   };
 
-  componentWillReceiveProps(nextPorps) {
+  static getDerivedStateFromProps(nextProps) {
     if (!this.props.isOpen && nextProps.isOpen) {
       this.animateOpen();
-    } else if (this.props.isOpen && !nextPorps.isOpen) {
+    } else if (this.props.isOpen && !nextProps.isOpen) {
       this.animateClose();
     }
   }
