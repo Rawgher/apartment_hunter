@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, View } from "react-native";
+import ApartmentPhoto from "./ApartmentPhoto";
 import { apartments } from "./data.js";
 
 export default class Apartments extends Component {
@@ -8,7 +9,11 @@ export default class Apartments extends Component {
       <View>
         <ScrollView>
           {apartments.map((apartment, index) => (
-            <Text>{apartment.name}</Text>
+            <ApartmentPhoto
+              apartment={apartment}
+              onOpen={this.openApartment}
+              key={index}
+            />
           ))}
         </ScrollView>
       </View>

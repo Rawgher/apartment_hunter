@@ -16,7 +16,7 @@ const cols = 3,
   rows = 3;
 
 export default class ApartmentPhoto extends Component {
-  static PropTypes = {
+  static propTypes = {
     apartment: PropTypes.object.isRequired,
     onOpen: PropTypes.func.isRequired
   };
@@ -29,16 +29,16 @@ export default class ApartmentPhoto extends Component {
     } = this.props;
     return (
       <TouchableOpacity
-        style={StyleSheet.container}
+        style={styles.container}
         onPress={() => onOpen(apartment)}
       >
-        <View style={StyleSheet.imageContainer}>
-          <Image source={{ uri: photo }} style={StyleSheet.image} />
+        <View style={styles.imageContainer}>
+          <Image source={{ uri: photo }} style={styles.image} />
         </View>
-        <Text style={StyleSheet.name} numberOfLines={1}>
+        <Text style={styles.name} numberOfLines={1}>
           {name}
         </Text>
-        <Text style={StyleSheet.city} numberOfLines={1}>
+        <Text style={styles.city} numberOfLines={1}>
           {city}
         </Text>
       </TouchableOpacity>
