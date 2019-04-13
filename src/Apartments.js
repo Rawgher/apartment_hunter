@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
-// import ApartmentModal from "./ApartmentModal";
+import ApartmentModal from "./ApartmentModal";
 import ApartmentPhoto from "./ApartmentPhoto";
 import { apartments } from "./data.js";
 
@@ -39,11 +39,11 @@ export default class Apartments extends Component {
           ))}
         </ScrollView>
 
-        {/* <ApartmentModal
+        <ApartmentModal
           apartment={this.state.apartment}
           isOpen={this.state.popupIsOpen}
           onClose={this.closeApartment}
-        /> */}
+        />
       </View>
     );
   }

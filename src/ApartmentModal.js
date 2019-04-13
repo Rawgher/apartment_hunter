@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import {
   Animated,
-  Dimesions,
+  Dimensions,
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
   View
 } from "react-native";
 
-const { width, height } = Dimesions.get("window");
+const { width, height } = Dimensions.get("window");
 
 export default class ApartmentModal extends Component {
   state = {
@@ -16,7 +16,7 @@ export default class ApartmentModal extends Component {
     visible: this.props.isOpen
   };
 
-  static getDerivedStateFromProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (!this.props.isOpen && nextProps.isOpen) {
       this.animateOpen();
     } else if (this.props.isOpen && !nextProps.isOpen) {
