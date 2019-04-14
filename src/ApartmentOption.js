@@ -6,7 +6,7 @@ import { defaultStyles } from "./styles";
 const colorDefault = "rgba(255, 255, 255, 1)",
   colorSelected = "rgba(103, 58, 183, 1)";
 
-export default class ApartmentOptions extends Component {
+export default class ApartmentOption extends Component {
   static propTypes = {
     // Value to display
     value: PropTypes.string.isRequired,
