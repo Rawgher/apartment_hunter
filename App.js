@@ -15,7 +15,11 @@ const AppNavigator = createStackNavigator(
     Confirmation: Confirmation
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "Home",
+    headerLayoutPreset: "center",
+    defaultNavigationOptions: {
+      title: "Apartment Hunter"
+    }
   }
 );
 
