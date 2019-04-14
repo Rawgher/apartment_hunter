@@ -12,6 +12,7 @@ import {
   TouchableWithoutFeedback,
   View
 } from "react-native";
+import ApartmentOptions from "./ApartmentOptions";
 import { defaultStyles } from "./styles";
 
 const { width, height } = Dimensions.get("window");
@@ -222,9 +223,17 @@ export default class ApartmentModal extends Component {
 
             <View>
               <Text style={styles.sectionHeader}>Day</Text>
-              <Text>Options here</Text>
+              <ApartmentOptions
+                values={days}
+                chosen={chosenDay}
+                onChoose={onChooseDay}
+              />
               <Text style={styles.sectionHeader}>Available Appointments</Text>
-              <Text>Options here</Text>
+              <ApartmentOptions
+                values={times}
+                chosen={chosenTime}
+                onChoose={onChooseTime}
+              />
             </View>
           </View>
 

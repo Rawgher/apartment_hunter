@@ -22,7 +22,7 @@ export default class ApartmentOption extends Component {
 
   componentWillMount() {
     if (this.props.isChosen) {
-      this.animatedSelect();
+      this.animateSelect();
     }
   }
 
@@ -34,7 +34,7 @@ export default class ApartmentOption extends Component {
     }
   }
 
-  animatedSelect() {
+  animateSelect() {
     Animated.timing(this.state.background, {
       toValue: 100,
       duration: 200
@@ -60,7 +60,7 @@ export default class ApartmentOption extends Component {
         <Animated.View
           style={[
             styles.container,
-            { backroundColor: backgroundColorAnimation }
+            { backgroundColor: backgroundColorAnimation }
           ]}
         >
           <Text style={{ color: isChosen ? colorDefault : colorSelected }}>
