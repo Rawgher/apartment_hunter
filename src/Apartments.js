@@ -6,7 +6,9 @@ import { apartments } from "./data.js";
 
 export default class Apartments extends Component {
   state = {
-    popupIsOpen: false
+    popupIsOpen: false,
+    chosenDay: 0,
+    chosenTime: null
   };
 
   openApartment = apartment => {
@@ -18,7 +20,21 @@ export default class Apartments extends Component {
 
   closeApartment = () => {
     this.setState({
-      popupIsOpen: false
+      popupIsOpen: false,
+      chosenDay: 0,
+      chosenTime: null
+    });
+  };
+
+  chooseDay = day => {
+    this.setState({
+      chosenDay: day
+    });
+  };
+
+  chooseTime = time => {
+    this.setState({
+      chosenTime: time
     });
   };
 
@@ -43,6 +59,10 @@ export default class Apartments extends Component {
           apartment={this.state.apartment}
           isOpen={this.state.popupIsOpen}
           onClose={this.closeApartment}
+          chosenDay={this.state.chosenDay}
+          chosenTime={this.state.chosenTime}
+          onChooseDay={this.chooseDay}
+          onChooseTime={this.chooseTime}
         />
       </View>
     );
