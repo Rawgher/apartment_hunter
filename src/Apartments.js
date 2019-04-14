@@ -38,6 +38,15 @@ export default class Apartments extends Component {
     });
   };
 
+  bookAppointment = () => {
+    if (!this.state.chosenTime) {
+      alert("Please select a view time");
+    } else {
+      this.closeApartment();
+      this.props.navigation.navigate("Confirmation");
+    }
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -63,6 +72,7 @@ export default class Apartments extends Component {
           chosenTime={this.state.chosenTime}
           onChooseDay={this.chooseDay}
           onChooseTime={this.chooseTime}
+          onBook={this.bookAppointment}
         />
       </View>
     );
